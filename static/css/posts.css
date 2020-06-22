@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+}
+#post-heading {
+    flex: 2;
+}
+.btn-success {
+    margin-top: 5px;
+}
+
+.detailed-post {
+    margin: 60px;
+}

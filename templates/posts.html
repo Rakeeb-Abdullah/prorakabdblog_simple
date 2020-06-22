@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Blog</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/posts.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="header">
+  <h1 id="post-heading" style="font-style: italic; font-weight: bolder;text-decoration: underline;">All Posts</h1>
+  <a href="/posts/new_post" class="btn btn-success">+New Post</a>
+</div>
+<br>
+<hr>
+<br>
+{% for post in posts %}
+<h2>{{ post.title }}</h2>
+{% if post.author %}
+  <small>By:{{ post.author }} at {{ post.date_posted }}</small>
+{% else %}
+  <small>By:N/A at {{ post.date_posted }}</small>
+{% endif %}
+<br>
+<br>
+<a href="/posts/read_more/{{post.id}}" class="btn btn-outline-secondary">Read More >></a>
+<hr>
+{% endfor %}
+{% endblock %}

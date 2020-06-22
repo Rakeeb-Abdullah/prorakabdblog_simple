@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Admin Login</title>
+{% endblock %}
+
+{% block body %}
+<div style="width: 50%;margin: auto;margin-top: 60px;background-color: rgba(157, 157, 240, 0.719);border-radius: 10px;text-align:center;">
+<img src="../static/undraw_authentication_fsn5.svg" alt="" style="width:90%;">
+  
+  <form action="/admin" method="POST" style="width: 90%;margin: auto;margin-top: 60px;padding: 10px;">
+    <div class="form-group">
+      <label for="title">Username</label>
+      <input type="text" class="form-control" id="username" name="username">
+    </div>
+    <div class="form-group">
+      <label for="author">Password</label>
+      <input type="password" class="form-control" id="password" name="password">
+    </div>
+    <input type="submit" value="Login" class="btn btn-primary">
+  </form>
+</div>
+{% endblock %}

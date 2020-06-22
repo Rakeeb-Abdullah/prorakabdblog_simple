@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Read More</title>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/posts.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="detailed-post">
+    <h2>{{ post.title }}</h2>
+    <hr>
+    {% if post.author %}
+    <small>By:{{ post.author }} at {{ post.date_posted }}</small>
+    {% else %}
+    <small>By:N/A at {{ post.date_posted }}</small>
+    {% endif %}
+    <hr>
+    <br>
+    <p style="white-space:pre-wrap">{{ post.content }}</p>
+    <br>
+    <div style="display: flex; justify-content:space-between;">
+        <a href="/posts" class="btn btn-outline-warning"> << All Posts </a>
+        <div style="margin-left: 10px;">
+            <a href="/posts/edit/{{post.id}}" class="btn btn-primary" style="margin-bottom: 2px; width: 105.95px;">Edit Post</a>
+            <a href="/posts/delete/{{post.id}}" class="btn btn-danger" style="margin-bottom: 2px;">Delete Post</a>
+        </div>
+    </div>
+    <hr>
+</div>
+
+{% endblock %}
